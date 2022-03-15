@@ -12,7 +12,7 @@ namespace UserLand
 		{
 			Position = new Vector2(200, Settings.ScreenSize.Y / 2);
 			Pivot = new Vector2(0.45f, 0.5f);
-			Scale = new Vector2(0.9f, 0.9f);
+			Scale = new Vector2(2f, 2f);
 			
 			speed = 500;
 		}
