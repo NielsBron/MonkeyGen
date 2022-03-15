@@ -43,6 +43,25 @@ namespace UserLand
 				framecounter = 0;
 				timer = 0.0f;
 			}
+		HandleInput(deltaTime);
+		}
+		private void HandleInput(float deltaTime) {
+			// Reload Game
+			if (Raylib.IsKeyReleased(KeyboardKey.KEY_R)) {
+				Reload();
+			}
+			// Player Rotate
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
+				//player.RotateRight(deltaTime);
+				Console.WriteLine("Right Key Pressed");
+			}
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
+				//player.RotateLeft(deltaTime);
+				Console.WriteLine("Left Key Pressed");
+			}
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_UP)) {
+				player.Speed();
+			}
 		}
 	}
 }
