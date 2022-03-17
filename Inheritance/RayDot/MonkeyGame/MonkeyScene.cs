@@ -20,18 +20,14 @@ namespace UserLand
 		public void Reload() {
 			Children.Clear();
 			State = State.Playing;
-
-			player = new Player("resources/player.png");
+			player = new Player("resources/PlayerIdle.png");
 			AddChild(player);
-
 			fpstext = new TextNode("calculating FPS..." , 20);
 			fpstext.Position = new Vector2(10 , 10);
 			fpstext.Color = Color.GREEN;
 			AddChild(fpstext);
 			timer = 0.0f;
 			framecounter = 0;
-
-
 		}
 
 		public override void Update(float deltaTime) {
@@ -43,7 +39,14 @@ namespace UserLand
 				framecounter = 0;
 				timer = 0.0f;
 			}
-		HandleInput(deltaTime);
+
+			HandleInput(deltaTime);
+			//if (Raylib.IsKeyReleased(KeyboardKey.KEY_UP)) {
+			//	player. ("resources/PlayerMove1.png");
+			//}
+			//else {
+			//	player. ("resources/PlayerIdle.png")
+            //}
 		}
 		private void HandleInput(float deltaTime) {
 			// Reload Game
@@ -54,13 +57,12 @@ namespace UserLand
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
 				//player.RotateRight(deltaTime);
 				Console.WriteLine("Right Key Pressed");
+				player.Walk2();
 			}
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
 				//player.RotateLeft(deltaTime);
 				Console.WriteLine("Left Key Pressed");
-			}
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_UP)) {
-				player.Speed();
+				player.Walk1();
 			}
 		}
 	}
