@@ -3,17 +3,20 @@ using System.Numerics; // Vector2
 using RayDot; // RayDot
 using Raylib_cs; // Raylib
 
+
 namespace UserLand
 {
 	class Player : MoverNode {
 
 		private SpriteNode body;
+		private float Speed;
 
 		public Player(string name) : base(name) {
-			Position = new Vector2(200 , Settings.ScreenSize.Y / 2);
+			Position = new Vector2(100, 550);
 			Pivot = new Vector2(0.45f , 0.5f);
-			Scale = new Vector2(2f , 2f);
+			Scale = new Vector2(3f , 3f);
 
+			Speed= 500;
 
 			body = new SpriteNode("resources/PlayerIdle.png");
 			body.Scale = new Vector2(1.05f , 1.05f);
@@ -30,16 +33,21 @@ namespace UserLand
 			// Move(deltaTime);
 
 			BorderWrap();
-			// BorderBounce();
 		}
 		public void Walk1() {
 			TextureName = "resources/PlayerMove1.png";
+			//float x = (float)Math.Cos(Rotation);
+			//float y = (float)Math.Sin(Rotation);
+			//AddForce(new Vector2(x, y) * Speed);
 		}
 		public void Walk2() {
 			TextureName = "resources/PlayerMove2.png";
 		}
 		public void Idle() {
 			TextureName = "resources/PlayerIdle.png";
+		}
+		public void Walk() {
+		
 		}
 
 

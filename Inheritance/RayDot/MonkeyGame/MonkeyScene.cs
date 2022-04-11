@@ -9,6 +9,7 @@ namespace UserLand
 	class MonkeyScene : SceneNode
 	{
 		private Player player;
+		private Background background;
 		private TextNode fpstext;
 		private float timer;
 		private int framecounter;
@@ -20,6 +21,8 @@ namespace UserLand
 		public void Reload() {
 			Children.Clear();
 			State = State.Playing;
+			background = new Background("");
+			AddChild(background);
 			player = new Player("resources/PlayerIdle.png");
 			AddChild(player);
 			fpstext = new TextNode("calculating FPS..." , 20);
@@ -56,13 +59,24 @@ namespace UserLand
 			// Player Rotate
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
 				//player.RotateRight(deltaTime);
-				Console.WriteLine("Right Key Pressed");
+				Console.WriteLine("<");
 				player.Walk2();
 			}
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
 				//player.RotateLeft(deltaTime);
-				Console.WriteLine("Left Key Pressed");
+				Console.WriteLine(">");
 				player.Walk1();
+			}
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN)) {
+				//player.RotateLeft(deltaTime);
+				Console.WriteLine("Idle");
+				player.Idle();
+			}
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE)) {
+				//player.RotateLeft(deltaTime);
+				Console.WriteLine("Walk");
+				player.Walk();
+
 			}
 		}
 	}
