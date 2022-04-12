@@ -1,5 +1,6 @@
 using System; // Math
 using System.Numerics; // Vector2
+using System.Collections.Generic; // List
 using RayDot; // RayDot
 using Raylib_cs; // Raylib
 
@@ -10,6 +11,7 @@ namespace UserLand
 
 		private SpriteNode body;
 		private float Speed;
+		private float timer;
 
 		public Player(string name) : base(name) {
 			Position = new Vector2(100, 550);
@@ -29,8 +31,11 @@ namespace UserLand
 		{
 			// MoverNode (IMovable)
 			base.Update(deltaTime);
-			// Or do:
-			// Move(deltaTime);
+			timer += deltaTime;
+			if (timer > 5.0f) {
+			//Console.WriteLine("t");
+			//Position = new Vector2(200, 550);
+			}
 
 			BorderWrap();
 		}
@@ -47,7 +52,9 @@ namespace UserLand
 			TextureName = "resources/PlayerIdle.png";
 		}
 		public void Walk() {
-		
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE)) {
+
+			}
 		}
 
 

@@ -27,7 +27,7 @@ namespace UserLand
 			AddChild(player);
 			fpstext = new TextNode("calculating FPS..." , 20);
 			fpstext.Position = new Vector2(10 , 10);
-			fpstext.Color = Color.GREEN;
+			fpstext.Color = Color.YELLOW;
 			AddChild(fpstext);
 			timer = 0.0f;
 			framecounter = 0;
