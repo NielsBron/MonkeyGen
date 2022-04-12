@@ -72,6 +72,16 @@ namespace UserLand
 			//	Console.WriteLine("Idle");
 			//	player.Idle();
 			//}
+
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
+				//player.RotateLeft(deltaTime);
+				Console.WriteLine("Left");
+				player.Walking2(deltaTime);
+			}
+			else {
+				player.Idle();
+            }
+
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
 				//player.RotateLeft(deltaTime);
 				Console.WriteLine("Right");
