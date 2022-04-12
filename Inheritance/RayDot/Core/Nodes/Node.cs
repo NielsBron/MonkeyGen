@@ -3,28 +3,24 @@ using System.Numerics; // Vector2
 
 namespace RayDot
 {
-	abstract class Node : ITransformable, IUpdatable
+	abstract class Node
 	{
 		// Data structure
-		private ITransformable parent;
-		private List<ITransformable> children;
-		public List<ITransformable> Children {
+		private Node parent;
+		private List<Node> children;
+		public List<Node> Children {
 			get { return children; }
 		}
-		public ITransformable Parent {
+		public Node Parent {
 			get { return parent; }
 			set { parent = value; }
 		}
 
 		// Transform
-		protected Vector2 position;
-		protected float rotation;
-		protected Vector2 scale;
+		public Vector2 Position;
+		public float rotation;
+		public Vector2 scale;
 
-		public Vector2 Position {
-			get { return position; }
-			set { position = value; }
-		}
 		public float Rotation {
 			get { return rotation; }
 			set { rotation = value; }
@@ -55,7 +51,7 @@ namespace RayDot
 		// Constructor
 		protected Node()
 		{
-			this.children = new List<ITransformable>();
+			this.children = new List<Node>();
 			Parent = null;
 			Position = new Vector2(0.0f, 0.0f);
 			Rotation = 0.0f;
@@ -68,7 +64,7 @@ namespace RayDot
 			// or don't, then this will be called
 		}
 
-		public bool AddChild(ITransformable child)
+		public bool AddChild(Node child)
 		{
 			if (children.Contains(child))
 			{
@@ -90,7 +86,7 @@ namespace RayDot
 			return true;
 		}
 
-		public bool RemoveChild(ITransformable child, bool keepAlive = false)
+		public bool RemoveChild(Node child, bool keepAlive = false)
 		{
 			// we don't know this child
 			if (!children.Contains(child))

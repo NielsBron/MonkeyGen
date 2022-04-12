@@ -3,7 +3,7 @@ using Raylib_cs; // Raylib
 
 namespace RayDot
 {
-	class TextNode : Node, IDrawable
+	class TextNode : Node
 	{
 		private String text;
 		private int fontsize;

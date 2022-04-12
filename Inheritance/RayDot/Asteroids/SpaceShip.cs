@@ -122,10 +122,10 @@ namespace UserLand
 			int sheight = (int)Settings.ScreenSize.Y;
 
 			// access protected fields in Node
-			if (position.X > swidth)  { position.X = 0; }
-			if (position.X < 0)       { position.X = swidth; }
-			if (position.Y > sheight) { position.Y = 0; }
-			if (position.Y < 0)       { position.Y = sheight; }
+			if (Position.X > swidth)  { Position.X = 0; }
+			if (Position.X < 0)       { Position.X = swidth; }
+			if (Position.Y > sheight) { Position.Y = 0; }
+			if (Position.Y < 0)       { Position.Y = sheight; }
 		}
 
 		private void BorderBounce()

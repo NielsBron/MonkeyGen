@@ -18,43 +18,35 @@ namespace UserLand
 			Pivot = new Vector2(0.45f , 0.5f);
 			Scale = new Vector2(3f , 3f);
 
-			Speed= 500;
+			Speed = 350;
 
-			body = new SpriteNode("resources/PlayerIdle.png");
+			body = new SpriteNode("");
 			body.Scale = new Vector2(1.05f , 1.05f);
 			body.Pivot = new Vector2(2f , 2f);
-			body.Color = Color.YELLOW;
 			AddChild(this.body);
 		}
 
 		public override void Update(float deltaTime) // override implementation of MoverNode.Update()
 		{
-			// MoverNode (IMovable)
 			base.Update(deltaTime);
 			timer += deltaTime;
 			if (timer > 5.0f) {
+			//Position += Speed * deltaTime;
 			//Console.WriteLine("t");
-			//Position = new Vector2(200, 550);
 			}
 
 			BorderWrap();
 		}
-		public void Walk1() {
-			TextureName = "resources/PlayerMove1.png";
-			//float x = (float)Math.Cos(Rotation);
-			//float y = (float)Math.Sin(Rotation);
-			//AddForce(new Vector2(x, y) * Speed);
-		}
-		public void Walk2() {
-			TextureName = "resources/PlayerMove2.png";
-		}
 		public void Idle() {
 			TextureName = "resources/PlayerIdle.png";
 		}
-		public void Walk() {
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE)) {
-
-			}
+		public void Walking1(float deltaTime) {
+			TextureName = "resources/PlayerMove1.png";
+			Position.X += Speed * deltaTime;
+		}
+		public void Walking2(float deltaTime) {
+			TextureName = "resources/PlayerMove2.png";
+			Position.X -= Speed * deltaTime;
 		}
 
 
@@ -64,10 +56,10 @@ namespace UserLand
 			int sheight = (int)Settings.ScreenSize.Y;
 
 			// access protected fields in Node
-			if (position.X > swidth)  { position.X = 0; }
-			if (position.X < 0)       { position.X = swidth; }
-			if (position.Y > sheight) { position.Y = 0; }
-			if (position.Y < 0)       { position.Y = sheight; }
+			if (Position.X > swidth)  { Position.X = 0; }
+			if (Position.X < 0)       { Position.X = swidth; }
+			if (Position.Y > sheight) { Position.Y = 0; }
+			if (Position.Y < 0)       { Position.Y = sheight; }
 		}
 	}
 }

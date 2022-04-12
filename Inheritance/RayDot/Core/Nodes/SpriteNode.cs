@@ -4,7 +4,7 @@ using Raylib_cs; // Raylib
 
 namespace RayDot
 {
-	class SpriteNode : Node, IDrawable
+	class SpriteNode : Node
 	{
 		// Sprite
 		private string textureName;

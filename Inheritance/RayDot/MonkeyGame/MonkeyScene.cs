@@ -57,27 +57,42 @@ namespace UserLand
 				Reload();
 			}
 			// Player Rotate
+			//if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
+			//	//player.RotateRight(deltaTime);
+			//	Console.WriteLine("<");
+			//	player.Walk2(deltaTime);
+			//}
+			//if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
+			//	//player.RotateLeft(deltaTime);
+			//	Console.WriteLine(">");
+			//	player.Walk1();
+			//}
+			//if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN)) {
+			//	//player.RotateLeft(deltaTime);
+			//	Console.WriteLine("Idle");
+			//	player.Idle();
+			//}
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
-				//player.RotateRight(deltaTime);
-				Console.WriteLine("<");
-				player.Walk2();
-			}
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
 				//player.RotateLeft(deltaTime);
-				Console.WriteLine(">");
-				player.Walk1();
+				Console.WriteLine("Right");
+				player.Walking1(deltaTime);
 			}
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN)) {
-				//player.RotateLeft(deltaTime);
-				Console.WriteLine("Idle");
+			else {
 				player.Idle();
-			}
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE)) {
-				//player.RotateLeft(deltaTime);
-				Console.WriteLine("Walk");
-				player.Walk();
+            }
 
-			}
+
+			//if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
+			//	//player.RotateLeft(deltaTime);
+			//	Console.WriteLine("Left");
+			//	player.Walking2(deltaTime);
+			//}
+			//else {
+			//	player.Idle();
+            //}
+		
+
+
 		}
 	}
 }
