@@ -14,11 +14,11 @@ namespace UserLand
 		private float timer;
 
 		public Player(string name) : base(name) {
-			Position = new Vector2(100, 550);
+			Position = new Vector2(200, 550);
 			Pivot = new Vector2(0.5f , 0.5f);
 			Scale = new Vector2(3f , 3f);
 
-			Speed = 350;
+			Speed = 50;
 
 			body = new SpriteNode("");
 			body.Scale = new Vector2(1.05f , 1.05f);
@@ -28,6 +28,7 @@ namespace UserLand
 
 		public override void Update(float deltaTime)
 		{
+
 			base.Update(deltaTime);
 			timer += deltaTime;
 			if (timer > 5.0f) {

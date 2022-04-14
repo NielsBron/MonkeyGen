@@ -55,6 +55,11 @@ namespace UserLand
 		}
 
 		public override void Update(float deltaTime) {
+			Console.WriteLine("Background Position = " + background3.Position.X);
+			if (background3.Position.X == 0) {
+				Console.WriteLine("position");
+            }
+
 			framecounter++;
 			timer += deltaTime;
 			if (timer > 1.0f) {
@@ -77,28 +82,29 @@ namespace UserLand
 			}
 
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_A)) {
-				Console.WriteLine("Left");
+				//Console.WriteLine("Left");
 				player.Walking2(deltaTime);
 				background2.Left(deltaTime);
+				background3.Left(deltaTime);
 			}
 			else {
 				player.Idle();
             }
 
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_D)) {
-				Console.WriteLine("Right");
+				//Console.WriteLine("Right");
 				player.Walking1(deltaTime);
 				background2.Right(deltaTime);
+				background3.Right(deltaTime);
 			}
 			
 			if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
-				Console.WriteLine("SUS");
+				//Console.WriteLine("SUS");
 				text.Text1(deltaTime);
 			}
 			if (Raylib.IsKeyReleased(KeyboardKey.KEY_SPACE)) {
 				text.Text2(deltaTime);
 			}
-		
 
 
 		}
