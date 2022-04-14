@@ -27,13 +27,10 @@ namespace UserLand
 			base.Update(deltaTime);
 		}
 		public void Text1(float deltaTime) {
-			timer += deltaTime;
-			if (timer > 0.0f) {
 				TextureName = "resources/sus.png";
-            }
-			if (timer > 3.0f) {
+		}
+		public void Text2(float deltaTime) {
 				TextureName = "resources/sus2.png";
-            }
 		}
 	}
 }

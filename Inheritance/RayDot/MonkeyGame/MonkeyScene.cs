@@ -95,6 +95,9 @@ namespace UserLand
 				Console.WriteLine("SUS");
 				text.Text1(deltaTime);
 			}
+			if (Raylib.IsKeyReleased(KeyboardKey.KEY_SPACE)) {
+				text.Text2(deltaTime);
+			}
 		
 
 
