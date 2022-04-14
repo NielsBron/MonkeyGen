@@ -6,15 +6,15 @@ using Raylib_cs; // Raylib
 
 namespace UserLand
 {
-	class Background : MoverNode {
+	class Background2 : MoverNode {
 
 		private SpriteNode body;
 
-		public Background(string name) : base(name) {
+		public Background2(string name) : base(name) {
 			Position = new Vector2(1280 , 720);
 			Pivot = new Vector2(1f , 1f);
 			Scale = new Vector2(1f , 1f);
-			body = new SpriteNode("resources/background.png");
+			body = new SpriteNode("resources/bg2.png");
 			body.Scale = new Vector2(1f , 1f);
 			body.Pivot = new Vector2(1f , 1f);
 			AddChild(this.body);

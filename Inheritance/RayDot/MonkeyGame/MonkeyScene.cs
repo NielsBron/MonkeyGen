@@ -9,7 +9,9 @@ namespace UserLand
 	class MonkeyScene : SceneNode
 	{
 		private Player player;
-		private Background background;
+		private Background1 background1;
+		private Background2 background2;
+		private Background3 background3;
 		private TextNode fpstext;
 		private float timer;
 		private int framecounter;
@@ -21,8 +23,12 @@ namespace UserLand
 		public void Reload() {
 			Children.Clear();
 			State = State.Playing;
-			background = new Background("");
-			AddChild(background);
+			background1 = new Background1("");
+			AddChild(background1);
+			background2 = new Background2("");
+			AddChild(background2);
+			background3 = new Background3("");
+			AddChild(background3);
 			player = new Player("resources/PlayerIdle.png");
 			AddChild(player);
 			fpstext = new TextNode("calculating FPS..." , 20);
