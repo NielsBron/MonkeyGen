@@ -41,12 +41,33 @@ namespace UserLand
 			TextureName = "resources/PlayerIdle.png";
 		}
 		public void Walking1(float deltaTime) {
-			TextureName = "resources/PlayerMove1.png";
 			Position.X += Speed * deltaTime;
+			timer += deltaTime;
+			if (timer > 0.0f) {
+				TextureName = "resources/PlayerMove1.png";
+			}
+			if (timer > 0.5f) {
+				TextureName = "resources/PlayerMove2.png";
+            }
+			if (timer > 1.0f) {
+				timer = 0.0f;
+            }
 		}
+
 		public void Walking2(float deltaTime) {
 			TextureName = "resources/PlayerMove2.png";
 			Position.X -= Speed * deltaTime;
+			timer += deltaTime;
+			
+			if (timer > 0.0f) {
+				TextureName = "resources/PlayerMove1.png";
+			}
+			if (timer > 0.5f) {
+				TextureName = "resources/PlayerMove2.png";
+            }
+			if (timer > 1.0f) {
+				timer = 0.0f;
+            }
 		}
 
 
