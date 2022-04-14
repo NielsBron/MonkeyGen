@@ -34,6 +34,12 @@ namespace UserLand
 			
 			background3 = new Background3("");
 			AddChild(background3);
+
+			//for (int i = 0; i == background3.Position.X; i++) {
+			//	background3 = new Background3("");
+			//	background3.Position.X = 1280;
+			//	AddChild(background3);
+			//}
 			
 			player = new Player("resources/PlayerIdle.png");
 			AddChild(player);
@@ -55,10 +61,17 @@ namespace UserLand
 		}
 
 		public override void Update(float deltaTime) {
-			Console.WriteLine("Background Position = " + background3.Position.X);
-			if (background3.Position.X == 0) {
-				Console.WriteLine("position");
+            //Console.WriteLine("Background Position = " + background3.Position.X);
+            //for (int i = 0; i < background3.Position.X; i++) {
+			//	Console.WriteLine("position");
+            //}
+			if (background3.Position.X < 0) {
+				//Console.WriteLine("background position is lower then 0");
             }
+			else {
+				//Console.WriteLine("background position is higher then 0");
+            }
+
 
 			framecounter++;
 			timer += deltaTime;
@@ -101,6 +114,7 @@ namespace UserLand
 			if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
 				//Console.WriteLine("SUS");
 				text.Text1(deltaTime);
+				Console.WriteLine("SUS");
 			}
 			if (Raylib.IsKeyReleased(KeyboardKey.KEY_SPACE)) {
 				text.Text2(deltaTime);
