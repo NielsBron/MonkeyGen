@@ -15,7 +15,7 @@ namespace UserLand
 
 		public Player(string name) : base(name) {
 			Position = new Vector2(100, 550);
-			Pivot = new Vector2(0.45f , 0.5f);
+			Pivot = new Vector2(0.5f , 0.5f);
 			Scale = new Vector2(3f , 3f);
 
 			Speed = 350;

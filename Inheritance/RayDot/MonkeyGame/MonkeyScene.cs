@@ -73,7 +73,7 @@ namespace UserLand
 			//	player.Idle();
 			//}
 
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_A)) {
 				//player.RotateLeft(deltaTime);
 				Console.WriteLine("Left");
 				player.Walking2(deltaTime);
@@ -82,15 +82,11 @@ namespace UserLand
 				player.Idle();
             }
 
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_D)) {
 				//player.RotateLeft(deltaTime);
 				Console.WriteLine("Right");
 				player.Walking1(deltaTime);
 			}
-			else {
-				player.Idle();
-            }
-
 
 			//if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
 			//	//player.RotateLeft(deltaTime);
