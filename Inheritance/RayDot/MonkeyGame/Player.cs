@@ -26,13 +26,11 @@ namespace UserLand
 			AddChild(this.body);
 		}
 
-		public override void Update(float deltaTime) // override implementation of MoverNode.Update()
+		public override void Update(float deltaTime)
 		{
 			base.Update(deltaTime);
 			timer += deltaTime;
 			if (timer > 5.0f) {
-			//Position += Speed * deltaTime;
-			//Console.WriteLine("t");
 			}
 
 			BorderWrap();
@@ -55,7 +53,6 @@ namespace UserLand
 		}
 
 		public void Walking2(float deltaTime) {
-			TextureName = "resources/PlayerMove2.png";
 			Position.X -= Speed * deltaTime;
 			timer += deltaTime;
 			
@@ -76,7 +73,6 @@ namespace UserLand
 			int swidth = (int)Settings.ScreenSize.X;
 			int sheight = (int)Settings.ScreenSize.Y;
 
-			// access protected fields in Node
 			if (Position.X > swidth)  { Position.X = 0; }
 			if (Position.X < 0)       { Position.X = swidth; }
 			if (Position.Y > sheight) { Position.Y = 0; }

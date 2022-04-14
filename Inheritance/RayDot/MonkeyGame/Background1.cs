@@ -20,12 +20,9 @@ namespace UserLand
 			AddChild(this.body);
 		}
 
-		public override void Update(float deltaTime) // override implementation of MoverNode.Update()
+		public override void Update(float deltaTime)
 		{
-			// MoverNode (IMovable)
 			base.Update(deltaTime);
-			// Or do:
-			// Move(deltaTime);
 		}
 	}
 }

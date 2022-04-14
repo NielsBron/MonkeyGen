@@ -12,6 +12,7 @@ namespace UserLand
 		private Background1 background1;
 		private Background2 background2;
 		private Background3 background3;
+		private Text text;
 		private TextNode fpstext;
 		private float timer;
 		private int framecounter;
@@ -31,6 +32,8 @@ namespace UserLand
 			AddChild(background3);
 			player = new Player("resources/PlayerIdle.png");
 			AddChild(player);
+			text = new Text("");
+			AddChild(text);
 			fpstext = new TextNode("calculating FPS..." , 20);
 			fpstext.Position = new Vector2(10 , 10);
 			fpstext.Color = Color.YELLOW;
@@ -40,68 +43,42 @@ namespace UserLand
 		}
 
 		public override void Update(float deltaTime) {
-			// Calculate framerate
 			framecounter++;
 			timer += deltaTime;
 			if (timer > 1.0f) {
-				fpstext.Text = framecounter.ToString() + " FPS";
+				fpstext.Text = framecounter.ToString() + " AMOGUS";
 				framecounter = 0;
 				timer = 0.0f;
 			}
 
+			text.Position = player.Position;
+
 			HandleInput(deltaTime);
-			//if (Raylib.IsKeyReleased(KeyboardKey.KEY_UP)) {
-			//	player. ("resources/PlayerMove1.png");
-			//}
-			//else {
-			//	player. ("resources/PlayerIdle.png")
-            //}
 		}
 		private void HandleInput(float deltaTime) {
-			// Reload Game
 			if (Raylib.IsKeyReleased(KeyboardKey.KEY_R)) {
 				Reload();
 			}
-			// Player Rotate
-			//if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
-			//	//player.RotateRight(deltaTime);
-			//	Console.WriteLine("<");
-			//	player.Walk2(deltaTime);
-			//}
-			//if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
-			//	//player.RotateLeft(deltaTime);
-			//	Console.WriteLine(">");
-			//	player.Walk1();
-			//}
-			//if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN)) {
-			//	//player.RotateLeft(deltaTime);
-			//	Console.WriteLine("Idle");
-			//	player.Idle();
-			//}
 
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_A)) {
-				//player.RotateLeft(deltaTime);
 				Console.WriteLine("Left");
 				player.Walking2(deltaTime);
+				background2.Left(deltaTime);
 			}
 			else {
 				player.Idle();
             }
 
 			if (Raylib.IsKeyDown(KeyboardKey.KEY_D)) {
-				//player.RotateLeft(deltaTime);
 				Console.WriteLine("Right");
 				player.Walking1(deltaTime);
+				background2.Right(deltaTime);
 			}
-
-			//if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
-			//	//player.RotateLeft(deltaTime);
-			//	Console.WriteLine("Left");
-			//	player.Walking2(deltaTime);
-			//}
-			//else {
-			//	player.Idle();
-            //}
+			
+			if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
+				Console.WriteLine("SUS");
+				text.Text1(deltaTime);
+			}
 		
 
 
