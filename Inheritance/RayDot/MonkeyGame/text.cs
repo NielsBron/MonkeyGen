@@ -14,7 +14,7 @@ namespace UserLand
 
 		public Text(string name) : base(name) {
 			Position = new Vector2(100 , 550);
-			Pivot = new Vector2(0.5f , 0.5f);
+			Pivot = new Vector2(0.15f , 0.8f);
 			Scale = new Vector2(3f , 3f);
 			body = new SpriteNode("");
 			body.Scale = new Vector2(1.05f , 1.05f);
